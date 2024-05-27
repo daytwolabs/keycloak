@@ -73,7 +73,6 @@ public abstract class AbstractInMemoryUserAdapter extends UserModelDefaultMethod
 
     @Override
     public void setUsername(String username) {
-        username = username==null ? null : username.toLowerCase();
         setSingleAttribute(UserModel.USERNAME, username);
     }
 

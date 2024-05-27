@@ -332,7 +332,7 @@ public class UserStorageManager extends AbstractStorageManager<UserStorageProvid
                 .map(provider -> provider.addUser(realm, username))
                 .filter(Objects::nonNull)
                 .findFirst()
-                .orElseGet(() -> localStorage().addUser(realm, username.toLowerCase()));
+                .orElseGet(() -> localStorage().addUser(realm, username));
     }
 
     @Override
@@ -569,7 +569,7 @@ public class UserStorageManager extends AbstractStorageManager<UserStorageProvid
 
     @Override
     public UserModel addUser(RealmModel realm, String id, String username, boolean addDefaultRoles, boolean addDefaultRequiredActions) {
-        return localStorage().addUser(realm, id, username.toLowerCase(), addDefaultRoles, addDefaultRequiredActions);
+        return localStorage().addUser(realm, id, username, addDefaultRoles, addDefaultRequiredActions);
     }
 
     @Override
